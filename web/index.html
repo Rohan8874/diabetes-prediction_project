@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Diabetes Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>🩺 Diabetes Prediction</h1>
+    <p class="subtitle">Pima Indians Diabetes — FastAPI inference</p>
+
+    <form id="predict-form">
+      <div class="grid">
+        <label>Pregnancies <input type="number" id="Pregnancies" min="0" value="0"></label>
+        <label>Glucose <input type="number" id="Glucose" min="0" step="0.1" value="120"></label>
+        <label>Blood Pressure <input type="number" id="BloodPressure" min="0" step="0.1" value="70"></label>
+        <label>Skin Thickness <input type="number" id="SkinThickness" min="0" step="0.1" value="20"></label>
+        <label>Insulin <input type="number" id="Insulin" min="0" step="0.1" value="85"></label>
+        <label>BMI <input type="number" id="BMI" min="0" step="0.1" value="33.6"></label>
+        <label>Diabetes Pedigree Function <input type="number" id="DiabetesPedigreeFunction" min="0" step="0.01" value="0.35"></label>
+        <label>Age <input type="number" id="Age" min="0" value="29"></label>
+      </div>
+      <button type="submit">Predict</button>
+    </form>
+
+    <div id="result" class="card hidden">
+      <h2 id="result-text"></h2>
+      <p><strong>Prediction:</strong> <span id="prediction"></span></p>
+      <p><strong>Confidence:</strong> <span id="confidence"></span></p>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary>Show API Metrics</summary>
+        <pre id="metrics"></pre>
+      </details>
+    </div>
+
+    <footer>API: <span id="api-url"></span></footer>
+  </div>
+  <script src="./script.js" defer></script>
+</body>
+</html>
