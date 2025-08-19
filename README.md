@@ -1,9 +1,4 @@
-# Diabetes Prediction — FastAPI · ML · Docker · Streamlit/Web
 
-Predict whether a patient is diabetic using the **Pima Indians Diabetes** dataset.  
-This project includes: model training (multiple classifiers), an **async FastAPI** backend, **Docker** packaging, **Render** deployment, and two frontend options (**Streamlit** and **vanilla HTML/JS**).
-
----
 
 ## Quick Links (replace after deploy)
 
@@ -20,33 +15,6 @@ This project includes: model training (multiple classifiers), an **async FastAPI
 
 ---
 
-## Repository Structure
-
-```
-diabetes-prediction/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── data/
-│   └── diabetes.csv                  # put Kaggle CSV here
-├── training/
-│   └── train.py                      # trains, evaluates, saves best model & metrics
-├── model/
-│   └── diabetes_model.pkl            # created by train.py
-├── metrics/
-│   └── metrics.json                  # created by train.py
-├── api/
-│   ├── main.py                       # FastAPI app (async)
-│   └── schemas.py                    # Pydantic request/response schemas
-├── Dockerfile
-├── docker-compose.yml                # (optional, for dev)
-└── frontend/
-    ├── streamlit_app.py              # Streamlit UI
-    └── web/                          # static HTML/JS UI
-        ├── index.html
-        ├── script.js
-        └── styles.css
-```
 
 ---
 
