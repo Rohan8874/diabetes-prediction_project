@@ -1,6 +1,7 @@
 import json
 import os
 from typing import Dict
+from fastapi.responses import RedirectResponse, Response
 
 import anyio
 import joblib
@@ -24,6 +25,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.get("/", include_in_schema=False)
+async def root():
+    # Send visitors to the Swagger UI
+    return RedirectResponse(url="/docs", status_code=302)
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    # No favicon; return 204 to avoid 404 noise
+    return Response(status_code=204)
 
 bundle = joblib.load(MODEL_PATH)
 pipeline = bundle["pipeline"]
